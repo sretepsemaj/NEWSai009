@@ -105,8 +105,8 @@ def director_view(request):
                 response = openai.ChatCompletion.create(
                     model="gpt-3.5-turbo",
                     messages=[
-                        {"role": "system", "content": "Write a teleprompter script as official as it would be on the nightly news and remeber the anchorman name is tech with tim."},
-                        {"role": "user", "content": f"Create a concise teleprompter but be objective snd cover both side ov the script the anchorman is tech with tim hes the best coder but no one can actually confirm it:\n\n{reporter_response}"}
+                        {"role": "system", "content": "Write a teleprompter script as official as it would be on the nightly news tleprompter and remeber the anchorman name is tech with tim."},
+                        {"role": "user", "content": f"need this teleprompter for tech with tim:\n\n{reporter_response}"}
                     ],
                     max_tokens=200,  # Adjust the number of tokens based on your requirements
                     temperature=0.7  # Optional: Controls the randomness of the response
