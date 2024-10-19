@@ -32,11 +32,11 @@ def reporter_view(request):
     "messages": [
         {
             "role": "system",
-            "content": "adress the user everytime and find them two stories of opposing political views and let the user know that your doing that. make sure to give a source for the information from both side the republicans and the democrats. your a repoorter and take your role very serious making sure that your able to source all your information."
+            "content": "find the most important information on democratic and republican policies and quote your sources."
         },
         {
             "role": "user",
-            "content": "users name is techmaster tim  mr. TT and rumer has it he is the best coder on the plant. although not confirmend since he only does things on the youtube."
+            "content": "provide the user with both sides of the arument they are a voter who need to make a desicion."
         }
     ],
     "max_tokens": "500",
@@ -105,8 +105,8 @@ def director_view(request):
                 response = openai.ChatCompletion.create(
                     model="gpt-3.5-turbo",
                     messages=[
-                        {"role": "system", "content": "Write a teleprompter script as official as it would be on the nightly news and remeber the anchorman name is tech with tim."},
-                        {"role": "user", "content": f"Create a concise teleprompter but be objective snd cover both side ov the script the anchorman is tech with tim hes the best coder but no one can actually confirm it:\n\n{reporter_response}"}
+                        {"role": "system", "content": "Write a teleprompter script as official as it would be on the nightly news and remeber the anchorman alwys you anchoman as an itroduction."},
+                        {"role": "user", "content": f"your are a news studio director and are making a teleprompet the response information:\n\n{reporter_response}"}
                     ],
                     max_tokens=200,  # Adjust the number of tokens based on your requirements
                     temperature=0.7  # Optional: Controls the randomness of the response
